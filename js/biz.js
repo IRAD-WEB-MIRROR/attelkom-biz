@@ -90,3 +90,42 @@
     });
   });
 })();
+
+/* brand pages: tabs show one panel at a time (without JS every section is on the page) */
+(function () {
+  var bp = document.querySelector(".bp");
+  if (!bp) return;
+  var tabs = bp.querySelectorAll(".tabs.bt a"), secs = bp.querySelectorAll(".tab");
+  if (!tabs.length) return;
+  function show(id) {
+    var ok = false;
+    for (var i = 0; i < secs.length; i++) { var on = secs[i].id === id; secs[i].classList.toggle("show", on); ok = ok || on; }
+    if (!ok) return false;
+    for (var j = 0; j < tabs.length; j++) tabs[j].classList.toggle("on", tabs[j].getAttribute("href") === "#" + id);
+    return true;
+  }
+  bp.classList.add("js-tabs");
+  var first = tabs[0].getAttribute("href").slice(1);
+  if (!(location.hash && show(location.hash.slice(1)))) show(first);
+  bp.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href^='#']");
+    if (!a) return;
+    var id = a.getAttribute("href").slice(1);
+    var target = document.getElementById(id);
+    if (target && target.classList.contains("tab")) { e.preventDefault(); show(id); history.replaceState(null, "", "#" + id); bp.querySelector(".tabs.bt").scrollIntoView({ block: "nearest" }); }
+    else if (target && target.closest(".tab") && !target.closest(".tab").classList.contains("show")) { show(target.closest(".tab").id); }
+  });
+  /* owner-view mock on the demo page: changes show here only, nothing is saved or sent */
+  var cust = document.getElementById("customize");
+  if (!cust) return;
+  cust.addEventListener("click", function (e) {
+    var sw = e.target.closest(".sw");
+    if (sw) { bp.style.setProperty("--b-acc", sw.getAttribute("data-acc")); }
+    if (e.target.id === "custsave") { document.getElementById("custmsg").textContent = "Demo page: changes are not saved."; }
+  });
+  cust.addEventListener("change", function (e) {
+    var k = e.target.getAttribute("data-sec");
+    if (!k) return;
+    for (var j = 0; j < tabs.length; j++) if (tabs[j].getAttribute("href") === "#" + k) tabs[j].style.display = e.target.checked ? "" : "none";
+  });
+})();

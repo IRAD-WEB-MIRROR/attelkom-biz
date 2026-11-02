@@ -219,3 +219,8 @@ header.top .wrap { display: flex; align-items: center; gap: 18px; min-height: 66
 #locations h3 small { color: var(--mute); font-weight: 400; }
 .rev .at { display: block; margin: -2px 0 4px; color: var(--mute); }
 .phead { position: relative; z-index: 1; }
+.cover.photo { position: relative; overflow: hidden; background: #333; }
+.cover.photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.ph.has { position: relative; padding: 0; overflow: hidden; background: #333; }
+.ph.has img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph.has span { position: absolute; left: 8px; bottom: 6px; }

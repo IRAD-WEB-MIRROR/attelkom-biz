@@ -210,5 +210,12 @@ header.top .wrap { display: flex; align-items: center; gap: 18px; min-height: 66
   .beta { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-.cover.pic { position: relative; background: linear-gradient(180deg, #3a4048, #262b31); overflow: hidden; }
-.cover.pic img { position: absolute; left: 4%; top: 7%; width: 92%; height: 86%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,.45)); }
+.cover.pic { position: relative; background: linear-gradient(180deg, #f4f6f2, #dfe5dc); overflow: hidden; }
+.cover.pic img { position: absolute; left: 4%; top: 7%; width: 92%; height: 86%; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(0,0,0,.25)); }
+.brandbox .bhead { display: flex; gap: 10px; align-items: center; color: inherit; text-decoration: none; }
+.brandbox .bhead small { display: block; color: var(--mute); font-size: 12px; }
+.brandbox p { margin: 10px 0; }
+#locations h3 { margin: 18px 0 8px; }
+#locations h3 small { color: var(--mute); font-weight: 400; }
+.rev .at { display: block; margin: -2px 0 4px; color: var(--mute); }
+.phead { position: relative; z-index: 1; }

@@ -1,4 +1,4 @@
-/* Taanış ui 1.4 — search, open-now, forms. Pages work without it. */
+/* Attelkom Biznes ui 1.4 — search, open-now, forms. Pages work without it. */
 (function () {
   var root = (document.querySelector('link[href$="css/biz.css"]') || {}).getAttribute ? document.querySelector('link[href$="css/biz.css"]').getAttribute("href").replace("css/biz.css", "") : "";
   var DK = ["su", "mo", "tu", "we", "th", "fr", "sa"];

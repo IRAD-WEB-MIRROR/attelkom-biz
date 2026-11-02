@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /claim.html
+Sitemap: https://biz.attelkom.net/sitemap.xml

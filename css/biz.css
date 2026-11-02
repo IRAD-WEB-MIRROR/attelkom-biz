@@ -210,3 +210,5 @@ header.top .wrap { display: flex; align-items: center; gap: 18px; min-height: 66
   .beta { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.cover.pic { position: relative; background: linear-gradient(180deg, #3a4048, #262b31); overflow: hidden; }
+.cover.pic img { position: absolute; left: 4%; top: 7%; width: 92%; height: 86%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,.45)); }
